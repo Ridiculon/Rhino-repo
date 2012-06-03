@@ -1,0 +1,31 @@
+use Rhino_Launch;
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 10, '2010-12-10', 'Free to Enter- This is a contest for the best 30-second to 2-minute video using only one take. Just a camera and your most creative long shot. NO editing required! Top 5 finalists earn points and winner walks away with 25$.', '1-Shot Video Contest');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 20, '2011-4-30', 'Free to Enter- The classiest Cigar Bar in town wants a video showing why they are the best spot in town for Cigar enthusiasts. In the spirit they request that the video be short (30sec-1:30) and in the theme of their logo and overall design, entirely in Black in White! First Prize is a 50$ gift card to Club Humidor, and the top finalists earn points.', 'Club Humidor Commercial Contest');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 10, '2011-1-22', 'Free to Enter- Most days (Especially for College Students) are the same series of events over and over. What are those in your life and how fast can you show us the routine of your life. You have 30sec or less to show us everything that happens to every day. Winner takes 50 points and a 10$ gift card with four runners up taking in 10 points.', 'Your Day in Flash');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 20, '2010-11-1', 'Free to Enter- For Amy\'s new ad campaign Treat Yourself, they want a video showing why you deserve to Treat Yourself. Did you save the day? Did you help someone out when they needed? Did you find a way to shut off the lights without getting out of bed? Whatever is show us why you deserve it. Top 3 videos earn 20$ gift cards and the next 5 earn 20 points.', 'Treat Yourself with Amy\'s');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 15, '2011-2-7', '5$ or 35 points to enter- Think you can film the next Maltese Falcon? Go for it! Show off your skills with this intermediate contest. Videos must at least four minutes (less than 10) long but you take any twist on the genre. Popular votes will determine top 10 and then Profile Users will for the best execution of the genre. Winner takes 85% of the pot with second taking 10% and third place walks away with 40 points', 'Film Noir');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 20, '2011-8-2', '', '');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 10, '2011-17-6', '', '');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 15, '2011-7-10', '', '');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 10, '2011-5-26', '', '');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 30, '2011-8-2', '', '');

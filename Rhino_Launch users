@@ -1,0 +1,9 @@
+use Rhino_Launch;
+insert into Log_On(ID, Password, UserName, Points, email, address, phone)
+values (null, 'password', 'user', 0, 'blah@blah.com', '1234 blah st.', '123-456-7890');
+insert into Log_On(ID, Password, UserName, Points, email,address, phone)
+values (null, '4nother', 'user1', 50, 'blah@blah.com', '1234 blah st.', '123-456-7890');
+insert into Log_On(ID, Password, UserName, Points, email, address, phone)
+values (null, 'rhinolaunch', 'user2', 100, 'blah@blah.com', '1234 blah st.', '123-456-7890');
+insert into Log_On(ID, Password, UserName, Points, email, address, phone)
+values (null, '3ds', 'user3', 260, 'blah@blah.com', '1234 blah st.', '123-456-7890');

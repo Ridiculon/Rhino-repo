@@ -1,0 +1,446 @@
+/********************************************
+   AUTHOR:  			Erwin Aligam 
+   WEBSITE:   			http://www.styleshout.com/
+	TEMPLATE NAME: 	ablaze
+   TEMPLATE CODE: 	S-0009
+   VERSION:          2.1	          	
+ *******************************************/ 
+ 
+/********************************************
+   HTML ELEMENTS
+********************************************/ 
+
+/* top elements */
+* { 
+	padding: 0; margin: 0;
+}
+html {
+	height: 100%;
+}
+body {
+	margin: 0; 	padding: 0;
+	font: normal .70em/1.5em Tahoma, 'Trebuchet MS', sans-serif;
+	color: #6A6A6A;
+	text-align: center;
+	background: #000;
+	height: 100%;
+}
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+/* links */
+a {
+	color: #F88F26; 
+	background-color: inherit;
+	text-decoration: none	
+}
+a:hover {
+	color: #FFF;
+	background-color: inherit;
+}
+
+/* headers */
+h1, h2, h3 {
+	font: bold 1.3em 'Trebuchet MS', Arial, Sans-serif;
+	color: #A0080D;
+}
+h1 { font-size: 1.6em; } 
+h2 { font-size: 1.4em; text-transform:uppercase;}
+h3 { font-size: 1.3em; }
+
+#main h1 { 
+	font: normal 1.5em 'Trebuchet MS', Arial, Sans-serif;
+	color: #DBD0A3; 	
+}
+#sidebar h1 {
+	font: bold 1.4em 'Trebuchet MS', Arial, Sans-serif;
+	background: #000 url(arrow.gif) no-repeat 10px .7em;
+	padding: 7px 0 7px 35px;
+	color: #A0080D;
+}
+
+p, h1, h2, h3 {
+	margin: 0;
+	padding: 0px 0px;
+}
+
+ul, ol {
+	margin: 10px 30px;
+	padding: 0 15px;
+	color: #F88F26;
+}
+ul span, ol span {
+	color: #CCC;
+} 
+
+/* images */
+img {
+	border: 3px solid #444;
+}
+img.no-border {
+	border: none;
+}
+img.float-right {
+  margin: 5px 0px 5px 15px;  
+}
+img.float-left {
+  margin: 5px 15px 5px 0px;
+}
+a img {  
+  border: 3px solid #444;
+}
+a:hover img {  
+  border: 3px solid #CCC !important; /* IE fix*/
+  border: 3px solid #444;
+}
+
+code {
+  margin: 5px 0;
+  padding: 10px;
+  text-align: left;
+  display: block;
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace;
+  /* white-space: pre; */
+  background: #111;    
+}
+acronym {
+  cursor: help;
+  border-bottom: 1px solid #777;
+}
+blockquote {
+	margin: 15px;
+ 	padding: 0 0 0 20px;  	
+  	background: #111;  
+   font: bold 1.3em/1.5em 'Trebuchet MS', Sans-serif;   
+}
+
+/* form elements */
+form {
+	margin: 15px;
+	padding: 0;
+	/*background: #000; */ 
+	/*border: 1px dashed #151515;*/
+}
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px 0;
+}
+input {
+	padding: 2px;
+	border: 1px solid #CCC;
+	font: normal 1em Verdana, sans-serif;
+	color:#000;
+	background: #CCC;
+}
+textarea {
+	width: 250px;
+	padding:2px;
+	border: 1px solid #CCC;
+	font: normal 1em Verdana, sans-serif;
+	height:100px;
+	display:block;
+	color:#000;
+	background: #CCC;
+}
+input.button { 
+	margin: 0; 
+	font: bold 1em Tahoma, Sans-serif; 
+	border: 1px solid #CCC;
+	padding: 2px 3px; 
+	color: #000;
+	background: #CCC;	
+}
+
+/* search form */
+.searchform form{
+	position: absolute;
+	top: 10px; right: 10px;
+	background-color: transparent;
+	border: none;
+	margin: 0; padding: 0;
+}
+.searchform input.textbox { 
+	margin: 0 3px; padding: 0 2px;
+	width: 130px;
+	background: #000;
+	color: #FFF; 
+	height: 20px;
+	border: 1px solid #7E050A;	
+	vertical-align: top;
+}
+.searchform input.button { 
+	font: bold 12px Arial, Sans-serif; 
+	background: #000;
+	color: #fff;	
+	width: 70px;
+	height: 22px;
+	border: none;
+	padding: 3px 5px;
+	vertical-align: top;
+}
+
+/***********************
+	  LAYOUT
+************************/
+
+#header-content, #footer-content, #content {
+	width: 83%;	
+}
+
+/* header */
+#header {
+	background: #444 url(headerbg.jpg) repeat-x 0 0;
+	height: 120px;
+	width: 100%;
+	text-align: left;
+	position:fixed;
+	
+	top:0%;
+	z-index:5;
+}
+#header-content {
+	//position: relative;
+	margin: 0 auto; padding: 0;
+	float:right;
+}
+#header-content #logo {
+	position: absolute;	
+	font: bold 50px Verdana, 'Trebuchet Ms', Sans-serif;
+	letter-spacing: -2px; 
+	color: #000;
+	margin: 0; padding: 0;
+
+	/* change the values of left and top to adjust the position of the logo */
+	//top: 5px; left: 20px;
+	//top: 5px; left: 250px;
+	top: 1%; left: 35%;
+}
+#header-content #slogan {
+	position: absolute;	
+	font: bold 12px 'Trebuchet Ms', Sans-serif;
+	text-transform: none;
+	color: #CCC;	
+	margin: 0; padding: 0;
+	
+	/* change the values of left and top to adjust the position of the slogan */
+	//top: 60px; left: 35px;
+	top: 12%; left: 35%;
+}
+
+/* header menu */
+#header-content ul {
+	position: absolute;
+	right: 20px; top: 75px; 
+	font: bolder 1.3em 'Trebuchet MS', sans-serif;
+	color: #000;
+	list-style: none;
+	margin: 0; padding: 0;		
+}
+#header-content li {
+	display: inline;
+}
+#header-content li a {
+	float: left;
+	display: block;
+	padding: 3px 12px;	
+	color: #000;
+}
+#header-content li a:hover {
+	background: #000;
+	color: #F88F26;
+}
+#header-content li a#current  {
+	background: #000;
+	color: #CCC;
+}
+
+/* login/register splash */
+
+#splash {
+	width: 65%;
+	height: 300px;
+	background: #8E0C09;
+	color: #FFFFFF;
+	position: absolute;
+	left: 15%;
+	top: 140px;
+	font-size: 1.5em;
+}
+
+/* user of the day sidebar */
+#sidebar {
+	width: 13%;
+	height: 80%;
+	outline-color: gray;
+	outline-style: outset;
+	outline-width: medium;
+	background: #8E0C09;
+	color: #FFFFFF;
+	position: fixed;
+	top: 140px;
+	z-index: 5;
+	
+	/* for IE */
+	filter: alpha(opacity=95);
+	/* CSS3 standard */
+	opacity: 0.90;
+	
+}
+
+#sidebar-content {
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	top: 140px;
+	
+}
+
+
+/* content */
+#content-wrap {
+	clear: both;
+	//float: left;
+	background: #000;
+	//position: absolute;
+	min-height: 100%;
+	//bottom: 60px; 
+	//left: 0px; 
+	//right: 0px; 
+	//top: 0px; 
+	//margin: auto;
+}
+
+#content {
+	overflow: auto;
+	padding-bottom: 60px;		
+}
+
+/* sidebar */
+/*
+#sidebar {
+	float: right;
+	width: 260px;
+	margin: 10px 0; padding: 0;	
+}
+#sidebar ul.sidemenu {
+	list-style:none;
+	margin: 0;
+	padding: 5px 0 15px 0;			
+}
+#sidebar ul.sidemenu li {
+	padding: 0 10px;
+}
+#sidebar ul.sidemenu a {
+	display: block;
+	font-weight:bold;
+	color: #6A6A6A; 
+	height: 1.5em;
+	text-decoration: none;
+	padding:.3em 0 .3em 15px;
+	background: #000;		
+	border-bottom: 1px dashed #151515; 
+	line-height: 1.5em;
+}
+#sidebar ul.sidemenu a.top{
+	border-top: 1px dashed #151515;
+}
+#sidebar ul.sidemenu a:hover {
+	padding: .3em 0 .3em 10px;
+	background: #000;
+	border-left: 5px solid  #D30F16;
+	color: #D30F16;		
+}
+#sidebar .sidebox {
+	background: #000;
+	margin: 5px 15px 10px 15px;
+}
+*/
+/* main */
+#main {
+	margin: 10px 0; 
+	padding: 0 270px 0 0;		
+}
+
+/* footer */
+/*#footer {
+	clear: both;
+	margin: 0; padding: 0;
+	//border-top: 1px solid #68050A;
+	//font-size: 95%;
+	text-align: center;	
+	height: 30px;
+	width: 100%;
+	font-size: small; 
+	position: absolute; 
+	bottom:0%; 
+	left:0%;
+	background:white;
+}*/
+
+#footer {
+	clear: both;
+	margin-top: -60px;
+	height: 60px;
+	border-top: 1px solid #68050A;
+	font-size: 95%;
+	text-align: center;
+	//position: absolute;
+	//bottom: 0px;
+	//top: 95%;
+	width: 100%
+	
+}
+
+#footer h2, #footer p {
+	padding-left: 0;
+}
+#footer-content {	
+	margin: 0 auto;		
+}
+#footer-content a {
+	text-decoration: none;
+	color: #8A8A8A;
+}
+#footer-content a:hover {
+	text-decoration: underline;
+	color: #FFF;
+}
+#footer-content ul {
+	list-style: none;
+	margin: 0; padding: 0;
+}
+#footer-content .col {
+	width: 32%;
+	padding: 0 5px 30px 15px;	
+}
+#footer-content .col2 {
+	width: 30%;
+	padding: 0 0 30px 0;	
+}
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+
+/* additional classes */
+.clear { clear: both; }
+.comments { 
+	text-align: right; 
+	border: 1px dashed #151515; 
+	padding: 5px 10px;
+	margin: 20px 15px 10px 15px;
+}
+
+
+
+

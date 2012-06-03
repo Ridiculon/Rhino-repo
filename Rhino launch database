@@ -1,0 +1,24 @@
+use Rhino_Launch;
+create table Log_On(
+ ID bigint unsigned not null primary key auto_increment,
+ Password char not null,
+ UserName varchar(60) not null,
+ Points int unsigned,
+ email varchar(60) not null,
+ address varchar(60),
+ phone varchar(60)
+);
+
+create table Contest(
+ Contest_ID bigint unsigned not null primary key auto_increment,
+ Points int unsigned,
+ Date date not null,
+ Description varchar(60) not null
+);
+
+create table Video(
+ ID bigint unsigned,
+ Contest_ID int unsigned,
+ Link varchar(60) not null,
+ Contest_Rank int unsigned
+);

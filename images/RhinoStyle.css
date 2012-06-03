@@ -1,0 +1,615 @@
+* {
+margin: 0;
+}
+
+html, body {
+	height:100%;
+	text-align: center;
+}
+
+body {
+	font: normal .70em/1.5em Tahoma, 'Trebuchet MS', sans-serif;
+	color: #6A6A6A;
+	text-align: center;
+	background-color: #262626;
+	height: 100%;
+}
+
+/* links */
+a {
+	color: #F88F26; 
+	background-color: inherit;
+	text-decoration: none	
+}
+a:hover {
+	color: #FFF;
+	background-color: inherit;
+}
+
+/* headers */
+h1, h2, h3 {
+	font: bold 1.3em 'Trebuchet MS', Arial, Sans-serif;
+	color: #A0080D;
+}
+h1 { font-size: 1.6em; } 
+h2 { font-size: 1.4em; text-transform:uppercase;}
+h3 { font-size: 1.3em; }
+
+p, h1, h2, h3 {
+	margin: 0;
+	padding: 0px 10px;
+}
+
+ul, ol {
+	margin: 10px 30px;
+	padding: 0 15px;
+	color: #F88F26;
+}
+ul span, ol span {
+	color: #CCC;
+} 
+
+/* images */
+img {
+	
+}
+img.no-border {
+	border: none;
+}
+img.float-right {
+  margin: 5px 0px 5px 15px;  
+}
+img.float-left {
+  margin: 5px 15px 5px 0px;
+}
+a img {  
+  border: 3px solid #444;
+}
+
+
+code {
+  margin: 5px 0;
+  padding: 10px;
+  text-align: left;
+  display: block;
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace;
+  /* white-space: pre; */
+  background: #111;    
+}
+acronym {
+  cursor: help;
+  border-bottom: 1px solid #777;
+}
+blockquote {
+	margin: 15px;
+ 	padding: 0 0 0 20px;  	
+  	background: #111;  
+	font: bold 1.3em/1.5em 'Trebuchet MS', Sans-serif;   
+}
+
+/* form elements */
+form {
+	margin: 15px;
+	padding: 0;
+	/*background: #000; */ 
+	/*border: 1px dashed #151515;*/
+}
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px 0;
+}
+input {
+	//padding: 2px;
+	//border: 1px solid #CCC;
+	font: normal 1em Verdana, sans-serif;
+	background: #131112;
+	color: #afafaf; 
+}
+textarea {
+	width: 250px;
+	padding:2px;
+	border: 1px solid #CCC;
+	font: normal 1em Verdana, sans-serif;
+	height:100px;
+	display:block;
+	background: #131112;
+	color: #afafaf; 
+}
+input.button { 
+	margin: 0; 
+	font: bold 1em Tahoma, Sans-serif; 
+	border: 1px solid #CCC;
+	padding: 2px 3px; 
+	color: #000;
+	background: #CCC;	
+}
+
+/* search form */
+.searchboxdiv
+{
+ margin:0;
+ height:21px;
+ width:146px;
+ background:url(nav_bar/Search_text_box.jpg) no-repeat bottom;
+}
+
+.searchbox
+{
+ background:none;
+ border:none;
+ width:134px;
+ height:15px;
+ margin:0;
+ padding: 2px 7px 0px 7px;
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:11px;
+}
+
+.searchform form{
+	position: absolute;
+	top: 10px; right: 20px;
+	//width:80%;
+	background-color: transparent;
+	border: none;
+	margin: 0; padding: 0;
+}
+.searchform input.input { 
+	//margin: 0 3px; padding: 0 2px;
+	//width: 130px;
+	background: #131112;
+	color: #afafaf; 
+	height: 20px;
+	border: 1px solid #7E050A;	
+	vertical-align: top;
+}
+.searchform input.button { 
+	//font: bold 12px Arial, Sans-serif; 
+	//background: #000;
+	//color: #fff;
+	//background-image: url
+	width: 70px;
+	height: 22px;
+	border: none;
+	padding: 3px 5px;
+	vertical-align: top;
+}
+
+/***********************
+	  LAYOUT
+************************/
+
+#container {
+   height:100%;
+}
+
+#header-content, #footer-content, #content {
+	width: 83%;	
+}
+
+/* header */
+#header {
+	
+	background-image: url('Header_background.jpg');
+	height: 220px;
+	width: 100%;
+	text-align: left;
+	position:relative;
+	//position:fixed;
+	border-bottom: 3px solid #333333;
+	top:0%;
+	z-index:5;
+	//padding:10px;
+	
+}
+#header-content {
+	//position: relative;
+	//margin: 0 auto; padding: 0;
+	//float:right;
+	position: relative;
+	width: 1100px;
+	top: 179px;
+	height: 41px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(nav_bar/Blank_Nav_bar.png);
+	background-size: 100%;
+	background-position: top left;
+}
+#header-content #logo {
+	position: absolute;	
+	font: bold 50px Verdana, 'Trebuchet Ms', Sans-serif;
+	letter-spacing: -2px; 
+	color: #000;
+	margin: 0; padding: 0;
+
+	/* change the values of left and top to adjust the position of the logo */
+	//top: 5px; left: 20px;
+	//top: 5px; left: 250px;
+	top: 1%; left: 35%;
+}
+#header-content #slogan {
+	position: absolute;	
+	font: bold 12px 'Trebuchet Ms', Sans-serif;
+	text-transform: none;
+	color: #CCC;	
+	margin: 0; padding: 0;
+	
+	/* change the values of left and top to adjust the position of the slogan */
+	//top: 60px; left: 35px;
+	top: 12%; left: 35%;
+}
+
+/* header menu */
+#header-content ul {
+	position: absolute;
+	right: 20px; top: 75px; 
+	font: bolder 1.3em 'Trebuchet MS', sans-serif;
+	color: #000;
+	list-style: none;
+	margin: 0; padding: 0;		
+}
+#header-content li {
+	display: inline;
+}
+#header-content li a {
+	float: left;
+	display: block;
+	padding: 5px 12px;	
+	color: #8a8a8a;
+}
+#header-content li a:hover {
+	//background: #000;
+	background-image: url(nav_bar/Pressed_button.jpg);
+	//color: #F88F26;
+	color: #d3d3d3;
+}
+
+#header-content li a#current  {
+	background: #000;
+	color: #CCC;
+}
+
+/*  */
+#content {
+	position: relative;
+	width: 1100px;
+	padding-bottom: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* preferred contest */
+
+#preferred-contest {
+	width: 100%;
+	position: relative;
+	height: 200px;
+	font: 1.5em 'Trebuchet MS';
+	color: #FFFFFF;
+	overflow: hidden;
+	background-image: url(gray_box/Gray_lower_left.jpg), url(gray_box/Gray_lower_right.jpg),
+					url(gray_box/Gray_upper_edge.jpg), url(gray_box/Gray_lower_edge.jpg),
+					url(gray_box/Gray_horizontal_edge.jpg);
+	background-position: bottom left, bottom right, top center, bottom center, center center;
+	background-repeat: no-repeat, no-repeat, repeat-x, repeat-x, repeat;
+
+}
+
+/* black side tab */
+
+#sidetab{
+	width: 190px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 235px; 
+	font: 1.5em 'Trebuchet MS';
+	color: #6A6A6A;
+	background-image: url(black_tab/Lower_left_corner.jpg), url(black_tab/Lower_right_corner.jpg),
+					url(black_tab/Black_tab_header.png), url(black_tab/Left_edge.jpg), 
+					url(black_tab/Right_edge.jpg), url(black_tab/Bottom_edge.jpg),
+					url(black_tab/Middle.jpg);
+	background-position: bottom left, bottom right, top center, center left, center right, center bottom, center center;
+	background-repeat: no-repeat, no-repeat, no-repeat, repeat-y, repeat-y, repeat-x, repeat;
+	background-size: auto, auto, 190px 35px, auto, auto, auto, auto;
+}
+
+/* expandable tab */
+
+#tabs {
+	width: 100%; 
+	position: relative;
+}
+
+div.expandable-tab {
+	overflow: hidden;
+	width: 100%; 
+	position: absolute; 
+	height: 140px;
+	left: 0%; 
+	//top: 500px;
+	//border-style: groove;
+	//border-width: 5px;
+	//border-color: #A0080D;
+	
+}
+
+div.tab-header {
+	font: bold 1.6em 'Trebuchet MS';
+	color: #FFFFFF;
+	position: absolute;
+	height: 35px;
+	width: 100%;
+	background-image:  url('Big_Full_tab_header.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+div.expandable-tab-header-exp {
+	//background: #A0080D;
+	font: bold 1.6em 'Trebuchet MS';
+	color: #FFFFFF;
+	position: absolute;
+	height: 35px;
+	width: 100%;
+	background-image:  url('Big_Full_tab_header_plus.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+div.expandable-tab-header-col {
+	//background: #A0080D;
+	font: bold 1.6em 'Trebuchet MS';
+	color: #FFFFFF;
+	position: absolute;
+	height: 35px;
+	width: 100%;
+	background-image:  url('Big_Full_tab_header_minus.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+div.expandable-tab-content {
+	position: absolute;
+	font: 1.5em 'Trebuchet MS';
+	color: #FFFFFF;
+	width: 100%;
+	height: 100px;
+	background-image: url(gray_box/Gray_upper_edge.jpg), url(gray_box/Gray_lower_edge.jpg),
+					url(gray_box/Gray_horizontal_edge.jpg);
+	background-position: top center, bottom center, center center;
+	background-repeat: repeat-x, repeat-x, repeat;
+	border-top-style: ridge;
+	border-top-width: 5px;
+	border-top-color: #A0080D;
+}
+
+div.expandable-tab-footer {
+	position: absolute;
+	position: absolute;
+	font: 1.5em 'Trebuchet MS';
+	color: #FFFFFF;
+	width: 100%;
+	height: 30px;
+	background-image: url(Big_Full_tab_footer.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 1100px 30px;
+}
+
+div.search-element{
+	position: absolute;
+	width: 95%;
+	height: 100px;
+	border-top-style: ridge;
+	border-top-width: 5px;
+	border-top-color: #000000;
+}
+
+div.red_patch{
+	width: 65%;
+	height: 300px;
+	background: #8E0C09;
+	color: #FFFFFF;
+	position: absolute;
+	left: 15%;
+	top: 240px;
+	font-size: 1.5em;
+}
+/* login/register splash */
+
+#splash {
+	height: 400px;
+	color: #FFFFFF;
+	position: relative;
+	top: 20px;
+	font-size: 1.5em;
+	background-image: url(gray_box/Gray_upper_left.jpg), url(gray_box/Gray_upper_right.jpg),
+					url(gray_box/Gray_lower_left.jpg), url(gray_box/Gray_lower_right.jpg),
+					url(gray_box/Gray_upper_edge.jpg), url(gray_box/Gray_lower_edge.jpg),
+					url(gray_box/Gray_horizontal_edge.jpg);
+	background-position: top left, top right, bottom left, bottom right, top center, bottom center, center center;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat;
+}
+
+/* user of the day sidebar */
+#sidebar {
+	width: 13%;
+	padding-right: 1%;
+	height: 80%;
+	outline-color: gray;
+	outline-style: outset;
+	outline-width: medium;
+	background: #8E0C09;
+	color: #FFFFFF;
+	position: fixed;
+	top: 240px;
+	z-index: 5;
+	overflow: hidden;
+	
+	/* for IE */
+	filter: alpha(opacity=90);
+	/* CSS3 standard */
+	opacity: 0.90;
+	
+}
+
+
+
+#wrap {
+	width:100%;
+	height:100%;
+	min-height:100%;
+	position:relative;
+	margin-bottom:-150px;
+
+}
+* html #wrap {
+	height:100%
+}
+
+#main {overflow:auto;}  /* must be same height as the footer */
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto -150px;
+
+}
+
+.push {
+	height: 150px;
+	clear: both;
+}
+
+.footer {
+	height: 150px;
+	clear: both;
+	background-image: url(Footer_terms_of_use.jpg), url(Footer_gradient.jpg);
+	background-position: bottom center, top left;
+	background-repeat: no-repeat, repeat;
+}
+
+
+/* things cinco added */
+h5{
+	font: bold 1.6em 'Trebuchet MS', Arial, Sans-serif;
+	color: #FFFFFF;
+	margin: 0;
+	padding: 0px 10px;
+}
+
+#vidContainer {
+	//border-color: #606060;
+	//border-style: outset;
+	//border-width: 5px;
+	min-height: 500px;
+	height: auto !important;
+	//background: #606060;
+	color: #FFFFFF;
+	position: relative;
+	top: 10px;
+	font-size: 1.5em;
+	
+	background-image: url(gray_box/Gray_lower_left.jpg), url(gray_box/Gray_lower_right.jpg),
+					url(gray_box/Gray_upper_edge.jpg), url(gray_box/Gray_lower_edge.jpg),
+					url(gray_box/Gray_horizontal_edge.jpg);
+	background-position: bottom left, bottom right, top center, bottom center, center center;
+	background-repeat: no-repeat, no-repeat, repeat-x, repeat-x, repeat;
+}
+
+#vid {
+	position:absolute;
+	top:5%;
+	left:5%;
+	width: 60%;
+}
+
+.vidInfo {
+	font-size: 1.0em;
+	text-align: left;
+	background-color: #505050;
+}
+
+div.vidInfo {
+	background-color: inherit;
+	border-color: black;
+	border-style: solid;
+	border-width: 5px;
+	position:absolute;
+	top:5%;
+	right:0%;
+	width:30%;
+}
+
+a.vidInfo {
+	color: #FFFFFF;
+	background-color: inherit;
+}
+
+p.vidInfo {
+	text-align: left;
+	color: #FFFFFF;
+}
+
+.error {
+/*	position:relative; */
+	text-align: center;
+	width: 100%;
+}
+
+p.error {
+	font: bold 1.6em 'Trebuchet MS', Arial, Sans-serif;
+	margin: 0;
+	padding: 0px 10px;
+	text-align: center;
+	color: #980000;
+	font-size: 20px;
+}
+
+.srchRes {
+	color: #FFFFFF;
+}
+
+li.srchRes {
+	color: #FFFFFF;
+}
+.auth {
+	font-size: 10pt;
+}
+
+table.auth {
+	color: #FFFFFF;
+	font-size: 10pt;
+	margin: 0 auto;
+}
+#register {
+	color: #FFFFFF;
+	font-size: 15pt;
+	margin: 0 auto;
+	text-align: center;
+}
+#authbord {
+	background-color: #505050;
+	background-image: url(gray_box/Gray_upper_left.jpg), url(gray_box/Gray_upper_right.png),
+					url(gray_box/Gray_lower_left.jpg), url(gray_box/Gray_lower_right.jpg),
+					url(gray_box/Gray_upper_edge.jpg), url(gray_box/Gray_lower_edge.jpg),
+					url(gray_box/Gray_horizontal_edge.jpg);
+	background-position: top left, top right, bottom left, bottom right, top center, bottom center, center center;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat;
+}
+
+#othbord {
+	border: 2px solid #999;
+	background: #505050;
+	padding: 15px;
+	margin: 0 auto;
+	width: 300px;
+}

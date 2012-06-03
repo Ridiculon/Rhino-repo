@@ -1,0 +1,21 @@
+use Rhino_Launch;
+
+grant select (UserName, Points)
+on Log_On2
+to basic;
+grant select(Title, Description, duedate)
+on Contest2
+to basic;
+grant select (Name, VidDescription)
+on Video2
+to basic;
+
+grant select (UserName, Points), insert (UserName, Password, email, address, phone), update(Password, email, address, phone)
+on Log_On2
+to userbasic identified by 'user8asic';
+grant select (Title, Description, duedate) 
+on Contest2
+to userbasic identified by 'user8asic';
+grant select (Name, VidDescription)
+on Video2
+to userbasic identified by 'user8asic';

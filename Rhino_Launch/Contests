@@ -1,0 +1,11 @@
+use Rhino_Launch;
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 10, '2010-12-10', 'This is a test contest hosted by Slartibartfasts fjord design department on the planet Magrathea, part of the larger Planet Design enterprise that constitutes the employment of an entire race.', 'Fjords R Us film contest');
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 20, '2019-30-4', 'This is another random test contest that I dont really feel like writing a long, detailed description for so I will probably stop typing pretty soon here at some point.', 'This is a  really serious contest, im seriously guys');
+
+
+insert into Contest2(Contest_ID, Points, duedate, Description, Title)
+values(null, 30, '3045-8-10', 'Uh... yeah', 'Youre just gonna have to guess on this one');
