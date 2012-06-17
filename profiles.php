@@ -183,7 +183,7 @@ session_start();
 									echo 'Name: '.substr(htmlspecialchars(stripslashes($row['Name'])), 0, 500);
 									echo '</div>';
 									
-									$query = "select Summary, Name, EndDate, contest.Contest_id, video.Contest_id, PrizeR, User_id from contest, video where User_id = '3' AND contest.Contest_id = video.Contest_id order by EndDate desc";
+									$query = "select Summary, Name, EndDate, contest.Contest_id, video.Contest_id, PrizeR, User_id from contest, video where User_id = '126' AND contest.Contest_id = video.Contest_id order by EndDate desc";
 									$result = mysql_query($query);
 									$num_results = mysql_num_rows($result);
 									
