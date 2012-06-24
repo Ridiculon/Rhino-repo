@@ -156,7 +156,7 @@ session_start();
 			<div id="preferred-contest" style="top: 55px">
 						<?php
 							@ $db = mysql_pconnect('localhost', 'userbasic', 'user8asic');
-							
+
 								if(!$db)
 								{
 									echo '<p style="text-align:center">Error: could not connect to the database.</p>';
@@ -164,14 +164,14 @@ session_start();
 								else
 								{
 									mysql_select_db('rhino_launch');
-								
+
 									$query = "select Uname, Name, RPoints, Picture, User_id from user where User_id = 126";
 									$result = mysql_query($query);
 									$row = mysql_fetch_array($result);
-									
+
 									$picture = $row['Picture'];
 									$rpoints = $row['RPoints'];
-									
+
 									echo '<div style="height:100%; width:150px; position: absolute; left:0px; top: 0px;">';
 									echo '<img src="images/Sitting_Rhino_no_background.png" class="no-border">';
 									echo '</div>';
@@ -182,11 +182,11 @@ session_start();
 									echo '<div style="position: absolute; text-align: left; top: 50px; left:200px; width:69%;">';
 									echo 'Name: '.substr(htmlspecialchars(stripslashes($row['Name'])), 0, 500);
 									echo '</div>';
-									
-									$query = "select Summary, Name, EndDate, contest.Contest_id, video.Contest_id, PrizeR, User_id from contest, video where User_id = '3' AND contest.Contest_id = video.Contest_id order by EndDate desc";
+
+									$query = "select Summary, Name, EndDate, contest.Contest_id, video.Contest_id, PrizeR, User_id from contest, video where User_id = '126' AND contest.Contest_id = video.Contest_id order by EndDate desc";
 									$result = mysql_query($query);
 									$num_results = mysql_num_rows($result);
-									
+
 									echo '<div style="position: absolute; text-align: left; top: 70px; left:200px; width:69%;">';
 									if($num_results > 0){
 										$row = mysql_fetch_array($result);
@@ -196,11 +196,11 @@ session_start();
 										echo 'This user hasn\'t entered any contests';
 									}
 									echo '</div>';
-									
+
 									echo '<div style="position: absolute; top: 90px; right: 0%; width: 15%">';
 									echo 'Rhino Points: '.$rpoints;
 									echo '</div>';
-									
+
 								}
 						?>
 			</div>
@@ -215,7 +215,7 @@ session_start();
 					
 					<?php
 						@ $db = mysql_pconnect('localhost', 'userbasic', 'user8asic');
-						
+
 							if(!$db)
 							{
 								echo '<p style="text-align:center">Error: could not connect to the database.</p>';
@@ -223,21 +223,21 @@ session_start();
 							else
 							{
 								mysql_select_db('rhino_launch');
-								
-								
-								
+
+
+
 								$query = "select User_id, Uname, Name, RPoints, Picture from user order by RPoints desc";
 								$result = mysql_query($query);
 								$num_results = mysql_num_rows($result);
-								
+
 								if($num_results > 0)
 								{
-									
-									
+
+
 									if($num_results > 5)
 										$num_results = 5;
-										
-									
+
+
 									for($i=0; $i < $num_results; $i++)
 									{
 											echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
@@ -261,27 +261,27 @@ session_start();
 								}
 								else
 									echo '<p style="text-align:center">No profiles at this time.</p></br>';
-									
-								
+
+
 								echo '</div>';
-								
+
 								echo '<div class="expandable-tab" id="2" style="top: 160px" >';
 								echo '<div class="expandable-tab-header-exp"  onclick="loadurl(\'expand_tab_profile.php\', 1, 2, \'RPoints-RegisterDate\')">';
 								echo 'New Users';
 								echo '</div>';
-								
+
 								$query = "select User_id, Uname, Name, RPoints, Picture from user order by RegisterDate desc";
 								$result = mysql_query($query);
 								$num_results = mysql_num_rows($result);
-								
+
 								if($num_results > 0)
 								{
-									
-									
+
+
 									if($num_results > 5)
 										$num_results = 5;
-										
-									
+
+
 									for($i=0; $i < $num_results; $i++)
 									{
 											echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
@@ -305,12 +305,12 @@ session_start();
 								}
 								else
 									echo '<p style="text-align:center">No profiles at this time.</p></br>';
-									
+
 								echo '</div>';
-								
-									
+
+
 							}
-							
+
 					?>
 						
 			</div>
