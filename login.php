@@ -9,6 +9,15 @@ $db = mysql_select_db('rhino_launch', $con) or die(mysql_error());
 include "./functions.php";
 ?>
 
+<link type="text/css" href="jquery/css/rhinostyle/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />	
+<script type="text/javascript" src="jquery/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-ui-1.8.19.custom.min.js"></script>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$( "#dialog" ).dialog();
+	});
+</script>
 
 <html xmlns:fb="http://ogp.me/ns/fb#">
 	<head>
@@ -74,7 +83,7 @@ include "./functions.php";
 				<div id="header">
 					<img src="images/rhinolaunch_logo.png" alt="rhino" style="position:absolute; top:40px; left: 20%; border:none; height:50%;"/>
 				</div>
-
+				
 				<div id="content">
 					<div id="splash" style="height: 350px">
 						<?php
@@ -86,7 +95,9 @@ include "./functions.php";
 							//Check if the username or password boxes were not filled in
 							if(!$username || !$password){
 								//if not display an error message
-								echo "<p class=\"error\">You need to fill in a <b>Username</b> and a <b>Password</b>!</p>";
+								echo "<div id=\"dialog\" title=\"Error\">";
+								echo "<p>You need to fill in a <b>Username</b> and a <b>Password</b>!</p>";
+								echo "</div>";
 							}else{
 								//if the were continue checking
 								//select all rows from the table where the username matches the one entered by the user
@@ -95,7 +106,9 @@ include "./functions.php";
 								//check if there was not a match
 								if($num == 0){
 									//if not display an error message
-									echo "<p class=\"error\">The <b>Username</b> you supplied does not exist!</p>";
+									echo "<div id=\"dialog\" title=\"Error\">";
+									echo "<p>The <b>Username</b> you supplied does not exist!</p>";
+									echo "</div>";
 								}else{
 									//if there was a match continue checking
 									//select all rows where the username and password match the ones submitted by the user
@@ -104,7 +117,9 @@ include "./functions.php";
 									//check if there was not a match
 									if($num == 0){
 										//if not display error message
-										echo "<p class=\"error\">The <b>Password</b> you supplied does not match the one for that username!</p>";
+										echo "<div id=\"dialog\" title=\"Error\">";
+										echo "<p>The <b>Password</b> you supplied does not match the one for that username!</p>";
+										echo "</div>";
 									}else{
 										//if there was continue checking
 										//split all fields fom the correct row into an associative array
@@ -112,7 +127,9 @@ include "./functions.php";
 										//check to see if the user has not activated their account yet
 										if($row['active'] != 1){
 											//if not display error message
-											echo "<p class=\"error\">You have not yet <b>Activated</b> your account!</p>";
+											echo "<div id=\"dialog\" title=\"Error\">";
+											echo "<p>You have not yet <b>Activated</b> your account!</p>";
+											echo "</div>";
 										}else{
 											//if they have log them in
 											//set the login session storing there id - we use this to see if they are logged in or not
