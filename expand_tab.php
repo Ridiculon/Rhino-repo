@@ -44,7 +44,7 @@
 					{
 						mysql_select_db('rhino_launch');
 
-						$query = "select Summary, Name, EndDate, Contest_id, PrizeR from contest order by ".$arguments[$j]." desc";
+						$query = "select Summary, Name, EndDate, Contest_id, PrizeR, Icon from contest order by ".$arguments[$j]." desc";
 						$result = mysql_query($query);
 						$num_results = mysql_num_rows($result);
 
@@ -64,7 +64,7 @@
 								echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
 								$row = mysql_fetch_array($result);
 								echo '<div style="height:100%; width:100px; position: absolute; left:0px;">';
-								echo '<img src="images/thumb'.$row['Contest_id'].'.png" class="no-border">';
+								echo '<img src="images/thumb'.$row['Icon'].'.png" class="no-border">';
 								echo '</div>';
 								echo '<div style="height:20px; position: absolute; left:15%; width: 70%;">';
 								echo '<strong><a href="./contest.php?contestid='.htmlspecialchars(stripslashes($row['Contest_id'])).'">';

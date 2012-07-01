@@ -70,7 +70,7 @@
 								echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
 								$row = mysql_fetch_array($result);
 								echo '<div style="height:100%; width:100px; position: absolute; left:0px;">';
-								echo '<img src="images/thumb'.$row['Contest_id'].'.png" class="no-border">';
+								echo '<img src="images/thumb'.$row['Icon'].'.png" class="no-border">';
 								echo '</div>';
 								echo '<div style="height:20px; position: absolute; left:15%; width: 70%;">';
 								echo '<strong><a href="./contest.php?contestid='.htmlspecialchars(stripslashes($row['Contest_id'])).'">';
