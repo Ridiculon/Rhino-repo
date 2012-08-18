@@ -7,6 +7,7 @@ session_start();
 <head>
 <title>Rhino Launch</title>
 <link rel="stylesheet" href="images/RhinoStyle.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 <SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="scripts.js"></SCRIPT>

@@ -95,6 +95,7 @@ session_start();
 <html>
 <head>
 <title>Rhino Launch -- Profiles</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 <link rel="stylesheet" href="images/RhinoStyle.css" type="text/css" />

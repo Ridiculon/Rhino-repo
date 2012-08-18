@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>Rhino Launch -- Video</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <?php

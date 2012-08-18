@@ -70,6 +70,7 @@
 <head>
 <title>Rhino Launch</title>
 <link rel="stylesheet" href="images/RhinoStyle.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 <div class="wrapper">

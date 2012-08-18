@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Rhino Launch -- Register</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <?php
