@@ -491,10 +491,20 @@ div.red_patch{
 
 .footer {
 	height: 150px;
+	padding-top: 35px;
 	clear: both;
-	background-image: url(Footer_terms_of_use.jpg), url(Footer_gradient.jpg);
-	background-position: bottom center, top left;
-	background-repeat: no-repeat, repeat;
+	font-size: 13px;
+	background-image: url(Footer_gradient.jpg);
+	background-position: top left;
+	background-repeat: repeat;
+}
+
+.footer a {
+	color: #8a8a8a;
+}
+
+.footer a:hover {
+	color: #d3d3d3;
 }
 
 
