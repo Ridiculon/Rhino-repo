@@ -4,7 +4,9 @@ if(!isset($_SESSION))
 session_start(); 
 } 
 ?>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<link type="text/css" href="jquery/css/rhinostyle/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />	
+<script type="text/javascript" src="jquery/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-ui-1.8.19.custom.min.js"></script>
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
 <SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="scripts.js"></SCRIPT>
 
@@ -68,6 +70,8 @@ session_start();
 	// IE expects a value here, hence we do send(null); 
 	//xmlhttp.send("i="+i+"&args="+args); 
 	xmlhttp.send(null);
+	
+	$("#dialog").dialog('close');
 	}
 
  
@@ -85,6 +89,13 @@ session_start();
 		} 
 	
 	} 
+	
+	function loaddialog(){
+		$("#dialog").dialog('open');
+	}
+	
+</script>
+	
 </script>
 
 <html xmlns:fb="http://ogp.me/ns/fb#">
@@ -102,6 +113,11 @@ session_start();
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+	$(function() {
+		$( "#dialog" ).dialog({ autoOpen: false });
+	});
+</script>
 
 	<div class="wrapper">
 		<?php
@@ -235,7 +251,19 @@ session_start();
 											echo '<img src="images/Flag_pressed.png" style="border:none" alt="Flagged"/> &nbsp; &nbsp;&nbsp; &nbsp;';
 										}
 										else {
-											echo '<img onclick="flag('.$videoid.');" id="Flaguga" src="images/Flag_unpressed.png" style="border:none;"></p>';
+											echo '<img onclick="loaddialog();" id="Flaguga" src="images/Flag_unpressed.png" style="border:none;"></p>';
+											echo '<div id="dialog" title="Flag">';
+											echo '<form>';
+											echo '<select>';
+											echo '<option>Inappropriate</option>';
+											echo '<option>Copyrighted/Unoriginal</option>';
+											echo '<option>Not relevant to contest</option>';
+											echo '<option>Other</option>';
+											echo '</select><br><br>';
+											echo '<textarea></textarea><br>';
+											echo '<a href="javascript: flag('.$videoid.')">Submit</a>';
+											echo '</form>';
+											echo '</div>';
 										}
 										
 

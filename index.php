@@ -71,6 +71,7 @@
 <title>Rhino Launch</title>
 <link rel="stylesheet" href="images/RhinoStyle.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<meta name="google-site-verification" content="GeCrd6_D4p18eshnC9wir9--HFmLry6rz6PIujSDgvM" />
 </head>
 <body>
 <div class="wrapper">
