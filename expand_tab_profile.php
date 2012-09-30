@@ -57,9 +57,10 @@
 							
 							
 							
-						for($i=0; $i < $num_results; $i++)
+						for($i=0; $i < 5; $i++)
 						{
 								echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
+							if($i < $num_results){
 								$row = mysql_fetch_array($result);
 								echo '<div style="height:100%; width:100px; position: absolute; left:0px;">';
 								//Profile Pic here
@@ -75,6 +76,7 @@
 								echo '<div style="position: absolute; top: 60px; right: 0%; width: 15%">';
 								echo 'Rhino Points: '.$row['RPoints'];
 								echo '</div>';
+							}
 								echo '</div>';
 						}
 						

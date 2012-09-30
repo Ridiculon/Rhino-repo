@@ -64,31 +64,33 @@
 
 
 
-							for($i=0; $i < $num_results; $i++)
+							for($i=0; $i < 3; $i++)
 							{
-
-								echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
-								$row = mysql_fetch_array($result);
-								echo '<div style="height:100%; width:100px; position: absolute; left:0px;">';
-								echo '<img src="images/thumb'.$row['Icon'].'.png" class="no-border">';
-								echo '</div>';
-								echo '<div style="height:20px; position: absolute; left:15%; width: 70%;">';
-								echo '<strong><a href="./contest.php?contestid='.htmlspecialchars(stripslashes($row['Contest_id'])).'">';
-								echo htmlspecialchars(stripslashes($row['Name'])).'</a></strong>';
-								echo '</div>';
-								echo '<div style="position: absolute; top: 20px; left:15%; width:70%;">';
-								if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 250)
-									echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 250).'...';
-								else
-									echo htmlspecialchars(stripslashes($row['Summary']));
-								echo '</div>';
-								echo '<div style="position: absolute; top: 15px; right: 0%; width: 15%">';
-								echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;
-								echo '</div>';
-								echo '<div style="position: absolute; top: 60px; right: 0%; width: 15%">';
-								echo 'Rhino Points: '.$row['PrizeR'];
-								echo '</div>';
-								echo '</div>';
+								
+									echo '<div class="expandable-tab-content" style="top:'.($i*105+35).'px">';
+								if($i < $num_results){
+									$row = mysql_fetch_array($result);
+									echo '<div style="height:100%; width:100px; position: absolute; left:0px;">';
+									echo '<img src="images/thumb'.$row['Icon'].'.png" class="no-border">';
+									echo '</div>';
+									echo '<div style="height:20px; position: absolute; left:15%; width: 70%;">';
+									echo '<strong><a href="./contest.php?contestid='.htmlspecialchars(stripslashes($row['Contest_id'])).'">';
+									echo htmlspecialchars(stripslashes($row['Name'])).'</a></strong>';
+									echo '</div>';
+									echo '<div style="position: absolute; top: 20px; left:15%; width:70%;">';
+									if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 250)
+										echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 250).'...';
+									else
+										echo htmlspecialchars(stripslashes($row['Summary']));
+									echo '</div>';
+									echo '<div style="position: absolute; top: 15px; right: 0%; width: 15%">';
+									echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;
+									echo '</div>';
+									echo '<div style="position: absolute; top: 60px; right: 0%; width: 15%">';
+									echo 'Rhino Points: '.$row['PrizeR'];
+									echo '</div>';
+								}
+									echo '</div>';
 
 							}
 
