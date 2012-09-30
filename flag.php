@@ -5,6 +5,8 @@ session_start();
 } 
 		include('youtube.php');
 		$videoid = $_GET['i'];
+		$flagtype = $_GET['id'];
+		$desc = $_GET['desc'];
 	
 		if($videoid){
 			$videoid = addslashes(trim($videoid));
@@ -15,7 +17,7 @@ session_start();
 			if($db){
 				mysql_select_db('rhino_launch');
 				$query = "UPDATE `video` SET Flag = 1 WHERE `Video_id`=".$videoid;
-				$insertflag = mysql_query("INSERT INTO `flags` (User_id, Video_id) VALUES('".$_SESSION['valid_user']."','".$videoid."')");
+				$insertflag = mysql_query("INSERT INTO `flags` (User_id, Video_id, user_rationale, objection_type) VALUES('".$_SESSION['valid_user']."','".$videoid."','".$desc."','".$flagtype."')");
 				$result = mysql_query($query);
 			}
 				

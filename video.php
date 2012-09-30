@@ -44,34 +44,43 @@ session_start();
 	xmlhttp.send(null);
 	} 
 	
-	function flag(i){
-	try { 
-        // Moz supports XMLHttpRequest. IE uses ActiveX. 
-        // browser detction is bad. object detection works for any browser 
-        xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP"); 
-	} catch (e) { 
-        // browser doesn't support ajax. handle however you want 
-	} 
- 
-	// the xmlhttp object triggers an event everytime the status changes 
-	// triggered() function handles the events 
-	xmlhttp.onreadystatechange = triggered; 
-	document.getElementById('Flaguga').src="images/Flag_pressed.png";
-	document.getElementById('Flaguga').onclick=undefined;
- 
- 
-	// open takes in the HTTP method and url. 
-	xmlhttp.open("GET", "./flag.php?i="+i); 
-	//xmlhttp.open("POST", dest, true);
+	function flag(i, form){
+		
+		try { 
+			// Moz supports XMLHttpRequest. IE uses ActiveX. 
+			// browser detction is bad. object detection works for any browser 
+			xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP"); 
+		} catch (e) { 
+			// browser doesn't support ajax. handle however you want 
+		} 
+	 
+		// the xmlhttp object triggers an event everytime the status changes 
+		// triggered() function handles the events 
+		xmlhttp.onreadystatechange = triggered; 
+		document.getElementById('Flaguga').src="images/Flag_pressed.png";
+		document.getElementById('Flaguga').onclick=undefined;
+	 
+		//var id = form.select.value;
+		//var description = encodeURI(form.textarea.value);
+	 
+		var e = document.getElementById("select");
+		var id = e.selectedIndex;
+		var description = document.getElementById("textarea").value;
+		
+		alert("Oh god why:" + id + "  " + description);
+	 
+		// open takes in the HTTP method and url. 
+		xmlhttp.open("GET", "./flag.php?i="+i+"&id="+id+"&desc="+description); 
+		//xmlhttp.open("POST", dest, true);
 
-	// send the request. if this is a POST request we would have 
-	// sent post variables: send("name=aleem&gender=male) 
-	// Moz is fine with just send(); but 
-	// IE expects a value here, hence we do send(null); 
-	//xmlhttp.send("i="+i+"&args="+args); 
-	xmlhttp.send(null);
-	
-	$("#dialog").dialog('close');
+		// send the request. if this is a POST request we would have 
+		// sent post variables: send("name=aleem&gender=male) 
+		// Moz is fine with just send(); but 
+		// IE expects a value here, hence we do send(null); 
+		//xmlhttp.send("i="+i+"&args="+args); 
+		xmlhttp.send(null);
+		
+		$("#dialog").dialog('close');
 	}
 
  
@@ -253,15 +262,15 @@ session_start();
 										else {
 											echo '<img onclick="loaddialog();" id="Flaguga" src="images/Flag_unpressed.png" style="border:none;"></p>';
 											echo '<div id="dialog" title="Flag">';
-											echo '<form>';
-											echo '<select>';
+											echo '<form name="flagform">';
+											echo '<select id="select">';
 											echo '<option>Inappropriate</option>';
 											echo '<option>Copyrighted/Unoriginal</option>';
 											echo '<option>Not relevant to contest</option>';
 											echo '<option>Other</option>';
 											echo '</select><br><br>';
-											echo '<textarea></textarea><br>';
-											echo '<a href="javascript: flag('.$videoid.')">Submit</a>';
+											echo '<textarea id="textarea"></textarea><br>';
+											echo '<a href="javascript: flag('.$videoid.', this.form)">Submit</a>';
 											echo '</form>';
 											echo '</div>';
 										}
