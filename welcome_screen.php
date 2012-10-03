@@ -128,9 +128,22 @@ if ($_REQUEST) {
 					$code = md5($row2['Uname']).$row2['RegisterDate'];
 					
 					//send the email with an email containing the activation link to the supplied email address
-					mail($email, @$INFO['chatName'].' registration confirmation', "Thank you for registering to us ".$username.",\n\nHere is your activation link. If the link doesn't work copy and paste it into your browser address bar.\n\nhttp://rhinolaunch.com/activate.php?code=".urlencode($code), 'From: cinco.braswell@rhinolaunch.com');
+					if (smtpmailer($email, 'Webmaster@rhinolaunch.com', 'The Rhino', 'RhinoLaunch Activation Email'
+						'Congratulations on registering your RhinoLaunch Account!\n
+						In order to finish registering, please follow this activation link. If the link doesn\'t work copy and paste it into your browser address bar.\n
+						http://rhinolaunch.com/activate.php?code='.urlencode($code)'
+						Now that you are signed-up, be sure to check out our contest page. Submit a unique video to a contest you like and start making money today!\n
+						Be sure to tell your friends to join RhinoLaunch as well so they can vote for your submissions and increase your chances!\n
+						Thanks and best of luck!
+
+						- Team RhinoLaunch')) {
+						//put stuff here
+					}
+					if (!empty($error)) echo $error;
+
+					//mail($email, @$INFO['chatName'].' registration confirmation', "Thank you for registering to us ".$username.",\n\nHere is your activation link. If the link doesn't work copy and paste it into your browser address bar.\n\nhttp://rhinolaunch.com/activate.php?code=".urlencode($code), 'From: cinco.braswell@rhinolaunch.com');
 					//display the success message
-					echo "<p><h5>Thank you for creating a RhinoLaunch account.\nYou have been sent an email which contains the activation code for your account.</h5></p>";
+					//echo "<p><h5>Thank you for creating a RhinoLaunch account.\nYou have been sent an email which contains the activation code for your account.</h5></p>";
 					//echo "<p><h5>You have successfully registered, please click on the link below to activate your account!</h5></p>";
 					//echo '<a href="activate.php?code='.urlencode($code).'">Activate account</a>';
 				}
