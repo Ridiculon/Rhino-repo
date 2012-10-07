@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	//check if the login session does not exist
+	$browser = get_browser(null, true);
+	if (isset($_SERVER['HTTP_USER_AGENT']) && 
+    (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)){
+		header('Location: ./ie.php');
+	}
 	if(strcmp(@$_SESSION['valid_user'],"") != 0){
 		header('Location: ./profile.php?id='.htmlspecialchars(stripslashes($_SESSION['valid_user'])).'');
 	}
