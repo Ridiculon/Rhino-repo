@@ -34,7 +34,7 @@
 <li>A request object, with a single property called "term", which refers to the value currently in the text input. For example, when the user entered "new yo" in a city field, the Autocomplete term will equal "new yo".</li>
 <li>A response callback, which expects a single argument to contain the data to suggest to the user. This data should be filtered based on the provided term, and can be in any of the formats described above for simple local data (String-Array or Object-Array with label/value/both properties). It's important when providing a custom source callback to handle errors during the request. You must always call the response callback even if you encounter an error. This ensures that the widget always has the correct state.</li>
 </ul>
-<p>The label is always treated as text, if you want the label to be treated as html you can use <a href="https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js" class="external text" title="https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js">Scott González' html extension</a>. The demos all focus on different variations of the source-option - look for the one that matches your use case, and take a look at the code.</p>
+<p>The label is always treated as text, if you want the label to be treated as html you can use <a rel=nofollow class="external text" href="https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js">Scott González' html extension</a>. The demos all focus on different variations of the source-option - look for the one that matches your use case, and take a look at the code.</p>
     </div>
     <div id="overview-dependencies">
         <h3>Dependencies</h3>
@@ -310,7 +310,7 @@ $( ".selector" ).autocomplete( "option", "minLength", 0 );</code></pre>
     </dl>
   </div>
   <div class="option-description">
-    <p>Identifies the position of the Autocomplete widget in relation to the associated input element. The "of" option defaults to the input element, but you can specify another element to position against. You can refer to the <a href="http://docs.jquery.com/UI/Position" class="external text" title="http://docs.jquery.com/UI/Position">jQuery UI Position</a> utility for more details about the various options.</p>
+    <p>Identifies the position of the Autocomplete widget in relation to the associated input element. The "of" option defaults to the input element, but you can specify another element to position against. You can refer to the <a rel=nofollow class="external text" href="http://docs.jquery.com/UI/Position">jQuery UI Position</a> utility for more details about the various options.</p>
   </div>
   <div class="option-examples">
     <h4>Code examples</h4>
@@ -851,15 +851,15 @@ $( ".selector" ).autocomplete( "option", "source", [&quot;c++&quot;, &quot;java&
   <h3>Sample markup with jQuery UI CSS Framework classes</h3>
   &lt;input class=&quot;<strong>ui-autocomplete-input</strong>&quot;/&gt;<br />
 &lt;ul class=&quot;<strong>ui-autocomplete</strong> <strong>ui-menu</strong> ui-widget ui-widget-content ui-corner-all&quot;&gt;<br />
-&nbsp;&nbsp;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class=&quot;ui-corner-all&quot;&gt;item 1&lt;/a&gt;<br />
-&nbsp;&nbsp;&lt;/li&gt;<br />
-&nbsp;&nbsp;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class=&quot;ui-corner-all&quot;&gt;item 2&lt;/a&gt;<br />
-&nbsp;&nbsp;&lt;/li&gt;<br />
-&nbsp;&nbsp;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class=&quot;ui-corner-all&quot;&gt;item 3&lt;/a&gt;<br />
-&nbsp;&nbsp;&lt;/li&gt;<br />
+&#160;&#160;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
+&#160;&#160;&#160;&#160;&lt;a class=&quot;ui-corner-all&quot;&gt;item 1&lt;/a&gt;<br />
+&#160;&#160;&lt;/li&gt;<br />
+&#160;&#160;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
+&#160;&#160;&#160;&#160;&lt;a class=&quot;ui-corner-all&quot;&gt;item 2&lt;/a&gt;<br />
+&#160;&#160;&lt;/li&gt;<br />
+&#160;&#160;&lt;li class=&quot;<strong>ui-menu-item</strong>&quot;&gt;<br />
+&#160;&#160;&#160;&#160;&lt;a class=&quot;ui-corner-all&quot;&gt;item 3&lt;/a&gt;<br />
+&#160;&#160;&lt;/li&gt;<br />
 &lt;/ul&gt;
   <p class="theme-note">
     <strong>
@@ -870,11 +870,15 @@ $( ".selector" ).autocomplete( "option", "source", [&quot;c++&quot;, &quot;java&
   </div>
 </div>
 
-</p><!-- 
-Pre-expand include size: 35982 bytes
-Post-expand include size: 61699 bytes
-Template argument size: 34147 bytes
-Maximum: 2097152 bytes
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2027/1000000
+Preprocessor generated node count: 3541/1000000
+Post-expand include size: 62441/2097152 bytes
+Template argument size: 34009/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key jqdocs_docs:pcache:idhash:3766-1!1!0!!en!2 and timestamp 20120416184232 -->
+<!-- Saved in parser cache with key jqdocs_live:pcache:idhash:3766-1!*!*!*!*!*!* and timestamp 20120929161858 -->

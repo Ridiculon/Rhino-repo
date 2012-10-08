@@ -1,3 +1,5 @@
+
+
 <?php
 		
 		/*	echo '<div class="expandable-tab-header" onclick="loadurl(\'test.php\')">';
@@ -62,6 +64,36 @@
 			
 		
 	echo '</div>';*/
-	phpinfo();
-	
 	?>
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Progressbar - Default functionality</title>
+	<link rel="stylesheet" href="images/RhinoStyle.css" type="text/css" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+	<link type="text/css" href="jquery/css/rhinostyle/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />
+	<script type="text/javascript" src="jquery/js/jquery-1.8.2.min.js"></script>
+	<!--<script type="text/javascript" src="jquery/js/jquery-ui-1.8.24.custom.min.js"></script>-->
+	<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.progressbar.js"></script>
+	<script>
+		$(function() {
+			$( "#progressbar" ).progressbar({
+				value: 37
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div style="height: 50px; padding: 12px">
+
+	<div id="progressbar" style="height:100%; padding: 12px; font-size: 1px"></div>
+
+</div><!-- End demo -->
+
+</body>
+</html>

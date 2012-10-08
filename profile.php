@@ -2,7 +2,13 @@
 session_start(); 
 ?>
 <SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="scripts.js"></SCRIPT>
+<link type="text/css" href="jquery/css/rhinostyle/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />	
+<script type="text/javascript" src="jquery/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-ui-1.8.24.custom.min.js"></script>
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="jquery/development-bundle/ui/jquery.ui.progressbar.js"></script>
 <script type="text/javascript">
 	
 	var expand;
@@ -78,7 +84,14 @@ session_start();
 		} 
 
 	} 
+	
+/*	$(function() {
+		$( "#progressbar" ).progressbar({
+			value: 37
+		});
+	});*/
 </script>
+
 
 <html>
 <head>
@@ -204,10 +217,24 @@ session_start();
 									
 								echo '<div style="position: absolute; left: 450px; top: 10px;"><h5>'.$uname.'</h5></div>';
 								
+								
+								
+								echo '<script>';
+								echo '	$(function() {';
+								echo '		$( "#progressbar" ).progressbar({';
+								echo '			value:'.$rpoints/100;
+								echo '		});';
+								echo '	});';
+								echo '</script>';
+								
+								
+								
+								
 								echo '<div style="position: absolute; right: 0px; width: 30%; height: 100%; background-image: url(images/gray_box/T_intersection.jpg), url(images/gray_box/Vertical_solid_bold.png); background-position: bottom left, top left; background-repeat: no-repeat, repeat-y">';
 								echo '<img src="images/Trophy.jpg" style="position: absolute; left: 6px; top: 10px">';
 								echo '<div style="position: absolute; left: 40px; top: 10px;"><h4>Rhino Points:</h4></div>';
 								echo '<div style="position: absolute; left: 40px; top: 30px;">'.$rpoints.'</div>';
+								echo '<div style="position: absolute; left: 6px; top: 55px; width: 80%; height: 30px"><div style="height: 30px;"id="progressbar"></div></div>';
 								echo '</div>';
 								echo '</div>';
 								
@@ -229,6 +256,8 @@ session_start();
 								echo '<div style="position: absolute; left:50%; width: 50%; height:150px; top: 125px;">';
 								echo '<div style="position: absolute; left: 25%; top: 20px;">Contests Won:</br>'.$num_results.'</div>';				
 								echo '</div>';
+								
+								
 								
 								echo '</div>'; //end of vidContainer
 								

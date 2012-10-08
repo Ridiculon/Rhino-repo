@@ -14,7 +14,7 @@
         <p>Tabs are generally used to break content into multiple sections that can be swapped to save space, much like an accordion.</p>
 <p>By default a tab widget will swap between tabbed sections onClick, but the events can be changed to onHover through an option. Tab content can be loaded via Ajax by setting an href on a tab.</p>
 <p><em>NOTE: Tabs created dynamically using .tabs( "add", ... ) are given an id of ui-tabs-NUM, where NUM is an auto-incrementing id. If you use this naming convention for your own elements, you may encounter problems.</em></p>
-<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1"><a href="#Events"><span class="tocnumber">1</span> <span class="toctext">Events</span></a></li>
 <li class="toclevel-1"><a href="#Ajax_mode"><span class="tocnumber">2</span> <span class="toctext">Ajax mode</span></a>
@@ -38,8 +38,8 @@
 </ul>
 </li>
 </ul>
-</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=1" title="Template:UIAPIPlugin">edit</a>]</div><a name="Events"></a><h2>Events</h2>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Events">Events</span></h2>
 <p>A series of events fire when interacting with a tabs interface:
 </p>
 <ul><li> tabsselect, tabsload, tabsshow (in that order)
@@ -58,7 +58,7 @@
 });</pre>
 <p>Note that if a handler for the tabsselect event returns false, the clicked tab will not become selected (useful for example if switching to the next tab requires a form validation).
 </p>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=2" title="Template:UIAPIPlugin">edit</a>]</div><a name="Ajax_mode"></a><h2> Ajax mode </h2>
+<h2> <span class="mw-headline" id="Ajax_mode"> Ajax mode </span></h2>
 <p>Tabs supports loading tab content via Ajax in an unobtrusive manner.
 </p><p>The HTML you need is slightly different from the one that is used for static tabs: A list of links pointing to existing resources (from where the content gets loaded) and no additional containers at all (unobtrusive!). The containers' markup is going to be created on the fly:
 </p>
@@ -87,14 +87,14 @@ could do so by matching a title attribute and the container's id:
 </p><p>This is useful if you want a human readable hash in the URL instead of
 a cryptic generated one.
 </p>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=3" title="Template:UIAPIPlugin">edit</a>]</div><a name="Back_button_and_bookmarking"></a><h3>Back button and bookmarking</h3>
+<h3> <span class="mw-headline" id="Back_button_and_bookmarking">Back button and bookmarking</span></h3>
 <p>Tabs 2 already supported this functionality, although the history plugin needs a rewrite first (it doesn't support Safari 3 and is in general a little inflexible) before it can be build back into the tabs. It is planned and Klaus is working on it whenever he finds the time. Actual bugs in the UI Tabs plugin itself always have higher priority though.
 </p>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=4" title="Template:UIAPIPlugin">edit</a>]</div><a name="How_to..."></a><h2>How to...</h2>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=5" title="Template:UIAPIPlugin">edit</a>]</div><a name="...retrieve_the_index_of_the_currently_selected_tab"></a><h3>...retrieve the index of the currently selected tab</h3>
+<h2> <span class="mw-headline" id="How_to...">How to...</span></h2>
+<h3> <span class="mw-headline" id="...retrieve_the_index_of_the_currently_selected_tab">...retrieve the index of the currently selected tab</span></h3>
 <pre>var $tabs = $('#example').tabs();
 var selected = $tabs.tabs('option', 'selected'); // =&gt; 0</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=6" title="Template:UIAPIPlugin">edit</a>]</div><a name="...open_links_in_the_current_tab_instead_of_leaving_the_page"></a><h3>...open links in the current tab instead of leaving the page</h3>
+<h3> <span class="mw-headline" id="...open_links_in_the_current_tab_instead_of_leaving_the_page">...open links in the current tab instead of leaving the page</span></h3>
 <p>"Hijax" links after tab content has been loaded:
 </p>
 <pre>$('#example').tabs({
@@ -105,14 +105,14 @@ var selected = $tabs.tabs('option', 'selected'); // =&gt; 0</pre>
         });
     }
 });</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=7" title="Template:UIAPIPlugin">edit</a>]</div><a name="...select_a_tab_from_a_text_link_instead_of_clicking_a_tab_itself"></a><h3>...select a tab from a text link instead of clicking a tab itself</h3>
+<h3> <span class="mw-headline" id="...select_a_tab_from_a_text_link_instead_of_clicking_a_tab_itself">...select a tab from a text link instead of clicking a tab itself</span></h3>
 <pre>var $tabs = $('#example').tabs(); // first tab selected
 
 $('#my-text-link').click(function() { // bind click event to link
     $tabs.tabs('select', 2); // switch to third tab
     return false;
 });</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=8" title="Template:UIAPIPlugin">edit</a>]</div><a name="...prevent_switching_to_the_tab_on_click_depending_on_form_validation"></a><h3>...prevent switching to the tab on click depending on form validation</h3>
+<h3> <span class="mw-headline" id="...prevent_switching_to_the_tab_on_click_depending_on_form_validation">...prevent switching to the tab on click depending on form validation</span></h3>
 <p>Returning false in the tabs select handler prevents the clicked tab from becoming selected.
 </p>
 <pre>$('#example').tabs({
@@ -121,13 +121,13 @@ $('#my-text-link').click(function() { // bind click event to link
         return isValid;
     }
 });</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=9" title="Template:UIAPIPlugin">edit</a>]</div><a name="...immediately_select_a_just_added_tab"></a><h3>...immediately select a just added tab</h3>
+<h3> <span class="mw-headline" id="...immediately_select_a_just_added_tab">...immediately select a just added tab</span></h3>
 <pre>var $tabs = $('#example').tabs({
     add: function(event, ui) {
         $tabs.tabs('select', '#' + ui.panel.id);
     }
 });</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=10" title="Template:UIAPIPlugin">edit</a>]</div><a name="...prevent_a_FOUC_.28Flash_of_Unstyled_Content.29_before_tabs_are_initialized"></a><h3>...prevent a FOUC (Flash of Unstyled Content) before tabs are initialized</h3>
+<h3> <span class="mw-headline" id="...prevent_a_FOUC_.28Flash_of_Unstyled_Content.29_before_tabs_are_initialized">...prevent a FOUC (Flash of Unstyled Content) before tabs are initialized</span></h3>
 <p>Add the necessary classes to hide an inactive tab panel to the HTML right away - note that this will <b>not</b> degrade gracefully with JavaScript being disabled:
 </p>
 <pre>&lt;div id=&quot;example&quot; class=&quot;ui-tabs&quot;&gt;
@@ -135,8 +135,8 @@ $('#my-text-link').click(function() { // bind click event to link
   &lt;div id=&quot;a-tab-panel&quot; class=&quot;ui-tabs-hide&quot;&gt; &lt;/div&gt;
   ...
 &lt;/div&gt;</pre>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=11" title="Template:UIAPIPlugin">edit</a>]</div><a name="Why_does..."></a><h2>Why does...</h2>
-<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://docs.jquery.com/action/edit/Template:UIAPIPlugin?section=12" title="Template:UIAPIPlugin">edit</a>]</div><a name="...my_slider.2C_Google_Map.2C_sIFR_etc._not_work_when_placed_in_a_hidden_.28inactive.29_tab.3F"></a><h3>...my slider, Google Map, sIFR etc. not work when placed in a hidden (inactive) tab?</h3>
+<h2> <span class="mw-headline" id="Why_does...">Why does...</span></h2>
+<h3> <span class="mw-headline" id="...my_slider.2C_Google_Map.2C_sIFR_etc._not_work_when_placed_in_a_hidden_.28inactive.29_tab.3F">...my slider, Google Map, sIFR etc. not work when placed in a hidden (inactive) tab?</span></h3>
 <p>Any component that requires some dimensional computation for its initialization won't work in a hidden tab, because the tab panel itself is hidden via <code>display: none</code> so that any elements inside won't report their actual width and height (0 in most browsers).
 </p><p>There's an easy workaround. Use the <em>off-left technique</em> for hiding inactive tab panels. E.g. in your style sheet replace the rule for the class selector ".ui-tabs .ui-tabs-hide" with
 </p>
@@ -158,7 +158,7 @@ resizeMap() will call Google Maps' checkResize() on the particular map.
         <ul>
 <li>UI Core</li>
 <li>UI Widget</li>
-<li><strong>Optional:</strong> <a href="https://github.com/carhartl/jquery-cookie" class="external text" title="https://github.com/carhartl/jquery-cookie">jquery.cookie.js</a> for use with <a href="http://jqueryui.com/demos/tabs/#option-cookie" class="external text" title="http://jqueryui.com/demos/tabs/#option-cookie">cookie option</a> (also included in development-bundle&gt;external folder.)</li>
+<li><strong>Optional:</strong> <a rel=nofollow class="external text" href="https://github.com/carhartl/jquery-cookie">jquery.cookie.js</a> for use with <a rel=nofollow class="external text" href="http://jqueryui.com/demos/tabs/#option-cookie">cookie option</a> (also included in development-bundle&gt;external folder.)</li>
 </ul>
     </div>
     <div id="overview-example">
@@ -399,7 +399,7 @@ $( ".selector" ).tabs( "option", "collapsible", true );</code></pre>
     </dl>
   </div>
   <div class="option-description">
-    <p>Store the latest selected tab in a cookie. The cookie is then used to determine the initially selected tab if the <i>selected</i> option is not defined. Requires <a href="http://plugins.jquery.com/project/cookie" class="external text" title="http://plugins.jquery.com/project/cookie">cookie plugin</a>, which can also be found in the development-bundle&gt;external folder from the download builder. The object needs to have key/value pairs of the form the cookie plugin expects as options. Available options (example): &#123; expires: 7, path: '/', domain: 'jquery.com', secure: true &#125;. Since jQuery UI 1.7 it is also possible to define the cookie name being used via <i>name</i> property.</p>
+    <p>Store the latest selected tab in a cookie. The cookie is then used to determine the initially selected tab if the <i>selected</i> option is not defined. Requires <a rel=nofollow class="external text" href="http://plugins.jquery.com/project/cookie">cookie plugin</a>, which can also be found in the development-bundle&gt;external folder from the download builder. The object needs to have key/value pairs of the form the cookie plugin expects as options. Available options (example): &#123; expires: 7, path: '/', domain: 'jquery.com', secure: true &#125;. Since jQuery UI 1.7 it is also possible to define the cookie name being used via <i>name</i> property.</p>
   </div>
   <div class="option-examples">
     <h4>Code examples</h4>
@@ -1490,13 +1490,13 @@ $( ".selector" ).tabs( "option", "tabTemplate", "&lt;div&gt;&lt;a href&#61;"#&#1
     
   <h3>Sample markup with jQuery UI CSS Framework classes</h3>
   &lt;div class=&quot;<strong>ui-tabs</strong> ui-widget ui-widget-content ui-corner-all&quot; id=&quot;tabs&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;<strong>ui-tabs-nav</strong> ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-state-default ui-corner-top ui-tabs-selected ui-state-active&quot;&gt;&lt;a href=&quot;#tabs-1&quot;&gt;Nunc tincidunt&lt;/a&gt;&lt;/li&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-state-default ui-corner-top&quot;&gt;&lt;a href=&quot;#tabs-2&quot;&gt;Proin dolor&lt;/a&gt;&lt;/li&gt;<br />
-&nbsp;&nbsp;&nbsp;&lt;div class=&quot;<strong>ui-tabs-panel</strong> ui-widget-content ui-corner-bottom&quot; id=&quot;tabs-1&quot;&gt;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Tab one content goes here.&lt;/p&gt;<br />
-&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-&nbsp;&nbsp;&nbsp; ...<br />
+&#160;&#160;&#160;&lt;ul class=&quot;<strong>ui-tabs-nav</strong> ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all&quot;&gt;<br />
+&#160;&#160;&#160;&#160;&#160;&lt;li class=&quot;ui-state-default ui-corner-top ui-tabs-selected ui-state-active&quot;&gt;&lt;a href=&quot;#tabs-1&quot;&gt;Nunc tincidunt&lt;/a&gt;&lt;/li&gt;<br />
+&#160;&#160;&#160;&#160;&#160;&#160;&lt;li class=&quot;ui-state-default ui-corner-top&quot;&gt;&lt;a href=&quot;#tabs-2&quot;&gt;Proin dolor&lt;/a&gt;&lt;/li&gt;<br />
+&#160;&#160;&#160;&lt;div class=&quot;<strong>ui-tabs-panel</strong> ui-widget-content ui-corner-bottom&quot; id=&quot;tabs-1&quot;&gt;<br />
+&#160;&#160;&#160;&#160;&#160;&#160;&lt;p&gt;Tab one content goes here.&lt;/p&gt;<br />
+&#160;&#160;&#160;&lt;/div&gt;<br />
+&#160;&#160;&#160; ...<br />
 &lt;/div&gt;<br />
   <p class="theme-note">
     <strong>
@@ -1522,11 +1522,15 @@ $( ".selector" ).tabs( "option", "tabTemplate", "&lt;div&gt;&lt;a href&#61;"#&#1
   </div>
 </div>
 
-</p><!-- 
-Pre-expand include size: 57707 bytes
-Post-expand include size: 98959 bytes
-Template argument size: 58199 bytes
-Maximum: 2097152 bytes
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3483/1000000
+Preprocessor generated node count: 5195/1000000
+Post-expand include size: 100222/2097152 bytes
+Template argument size: 58092/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key jqdocs_docs:pcache:idhash:3777-1!1!0!!en!2 and timestamp 20120416174411 -->
+<!-- Saved in parser cache with key jqdocs_live:pcache:idhash:3777-1!*!*!!en!*!* and timestamp 20120929161900 -->
