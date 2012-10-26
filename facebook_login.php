@@ -33,7 +33,8 @@
 				'no_session' => 'http://rhinolaunch.com/no_session.html',
 			);
 	
-			$next_url = $facebook->getLoginStatusUrl($params);
+			//$next_url = $facebook->getLoginStatusUrl($params);
+			$next_url = $facebook->getLoginUrl(array('display' => 'none'));
 	}
 	else
 		$next_url = 'http://rhinolaunch.com/register.php';
