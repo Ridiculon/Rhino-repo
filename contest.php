@@ -217,8 +217,13 @@ if(!isset($_SESSION))
 							//echo '<div style="position: absolute; right:0%">';
 							echo '<div style="position: absolute; width: 20%; right: 0%; border-left: dashed 3px #8a8a8a; border-bottom: dashed 3px #8a8a8a">';
 							echo '</br><p style="text-align:left"><h4>RhinoPoints: '.$row['PrizeR'].'</h4></p>';	
-							echo '</br><p style="text-align:left"><h4>Due Date: '.$row['EndDate'].'</h4></p></br>';
-							echo '<a href="./submitvideo.php?id='.$contestid.'"><img src="images/Submit_button_unpressed.png" style="border:none"></a>';
+							echo '</br><p style="text-align:left"><h4>Due Date: '.$row['EndDate'].'</h4></p>';
+							
+							if(strtotime('now')>strtotime($row['StartDate']))
+								echo '</br><a href="./submitvideo.php?id='.$contestid.'"><img src="images/Submit_button_unpressed.png" style="border:none"></a>';
+							else
+								echo '</br><p style="text-align:left"><h4>Contest will start at </br>'.$row['StartDate'].'</h4></p>';
+								
 							echo '</div>';
 							echo '</div>';
 							echo '<div style="position: absolute; width: 100%; top: 130px; height: 150px">';
