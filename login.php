@@ -58,6 +58,7 @@ include "./functions.php";
 					//document.getElementById("fb-div-reg").innerHTML = "";
 			
 					//document.getElementById("fb-div-reg").style.height = "0";
+					self.location = "http://rhinolaunch/register.php";
 				  } else {
 					// the user isn't logged in to Facebook.
 					//document.getElementById("fb-div-auth").innerHTML = "";
@@ -74,6 +75,18 @@ include "./functions.php";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		
+		function login() {
+			FB.login(function(response) {
+				if (response.authResponse) {
+					var uid = response.authResponse.userID;
+					var accessToken = response.authResponse.accessToken;
+
+					self.location = "http://rhinolaunch/facebook_login.php?uid="+uid;
+				} else {
+					// cancelled
+				}
+			});
+		}
 		
 		/*
 		  // Load the SDK's source Asynchronously
@@ -190,7 +203,9 @@ include "./functions.php";
 						</div>
 						
 						<div id="fb-div" style="position: absolute; width: 100%; height:30%; top:70%;">
-								<fb:login-button registration-url="http://rhinolaunch.com/register.php" show-faces="false" size="xlarge"></fb:login-button>
+							<form action="JavaScript:login()">	
+								<input type="image" src="images/facebook_signin_normal.png" onmousedown="this.src='images/facebook_signin_pressed.png'" onmouseup="this.src='images/facebook_signin_normal.png'">
+							</form>
 						</div>
 
 					</div>

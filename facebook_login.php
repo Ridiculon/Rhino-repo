@@ -20,8 +20,18 @@
 	
 	$query = "SELECT `User_id`, `Facebook_id` FROM `user` where `Facebook_id` = '".$uid."'";
 	$result = mysql_query($query);
+	
 	$num_results = mysql_num_rows($result);
 	
+		if($num_results){
+		$row = mysql_fetch_array($result);
+		$id = stripslashes($row['User_id']);
+		$next_url = 'http://rhinolaunch.com/profile.php?id='.$id;
+	}
+	else
+		$next_url = 'http://rhinolaunch/register.php';
+	
+	/*
 	if($num_results){
 			
 			$row = mysql_fetch_array($result);
@@ -34,14 +44,17 @@
 			);
 	
 			//$next_url = $facebook->getLoginStatusUrl($params);
-			$next_url = $facebook->getLoginUrl(array('display' => 'none'));
+			//$next_url = $facebook->getLoginUrl(array('display' => 'none'));
+			$loginUrl = $facebook->getLoginUrl(array(
+                                       'next' => 'http://rhonolaunch.com/profile.php?id='.$id,
+                                       'cancel_url' => 'http://rhinolaunch.com' ));
 	}
 	else
-		$next_url = 'http://rhinolaunch.com/register.php';
+		$next_url = 'http://rhinolaunch.com/register.php';*/
 	
 	$fbUser = $facebook->getUser();
 	
-	if($uid != $fbUser || $facebook->getUser()==0){
+	if($uid != $fbUser || $facebook->getUser()==0 || is_null($fbUser)){
 		$next_url = 'http://rhinolaunch.com/error.html';
 	}
 	else{
