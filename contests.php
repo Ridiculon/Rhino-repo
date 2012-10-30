@@ -160,9 +160,9 @@ if(!isset($_SESSION))
 									echo '</div>';
 									echo '<div style="position: absolute; text-align: left; top: 45px; left:160px; width:67%;">';
 									if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 400)
-											echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 400).'...';
+											echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 400).'...';
 										else
-											echo htmlspecialchars(stripslashes($row['Summary']));
+											echo html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])));
 									echo '</div>';
 									echo '<div style="position: absolute; top: 30px; right: 0%; width: 15%">';
 									echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;
@@ -230,9 +230,9 @@ if(!isset($_SESSION))
 										echo '</div>';
 										echo '<div style="position: absolute; top: 20px; left:15%; width:70%;">';
 										if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 250)
-											echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 250).'...';
+											echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 250).'...';
 										else
-											echo htmlspecialchars(stripslashes($row['Summary']));
+											echo html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])));
 										echo '</div>';
 										echo '<div style="position: absolute; top: 15px; right: 0%; width: 15%">';
 										echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;
@@ -299,9 +299,9 @@ if(!isset($_SESSION))
 										echo '</div>';
 										echo '<div style="position: absolute; top: 20px; left:15%; width:70%;">';
 										if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 250)
-											echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 250).'...';
+											echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 250).'...';
 										else
-											echo htmlspecialchars(stripslashes($row['Summary']));
+											echo html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])));
 										echo '</div>';
 										echo '<div style="position: absolute; top: 15px; right: 0%; width: 15%">';
 										echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;
