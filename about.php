@@ -69,13 +69,20 @@ session_start();
 		<div id="content">
 
 			<div id="splash">
-				</br>
-				<h3 style="color:#FFFFFF"> What is this about? </h3>
-				</br>
-				<p> RhinoLaunch pits filmmakers against each other in competition as they work to create quality video advertisements for businesses in their area. 
-				Businesses receive a multitude of affordable advertisements that have been voted on by the very people they are looking to attract to their business,
-				while winning filmmakers receive a cash prize and recognition for their work. RhinoLaunch was founded in 2010 at San Antonio's first 3 Day Startup Event 
-				and all six members of our team are students at Trinity University. </p>
+				<div style="position: absolute; left: 50%; width: 45%; top: 0%;">
+					</br>
+					<h3 style="color:#FFFFFF"> What is this about? </h3>
+					</br>
+					<p> RhinoLaunch pits filmmakers against each other in competition as they work to create quality video advertisements for businesses in their area. 
+					Businesses receive a multitude of affordable advertisements that have been voted on by the very people they are looking to attract to their business,
+					while winning filmmakers receive a cash prize and recognition for their work. RhinoLaunch was founded in 2010 at San Antonio's first 3 Day Startup Event 
+					and all six members of our team are students at Trinity University. </p>
+				</div>
+				
+				<div style="position: absolute; left: 0%; width: 50%; top: 0%">
+					</br>
+					<img src="images/rhinoteam.jpg" alt="rhinoteam" style="width: 80%"/>
+				</div>
 				
 			</div>
 
