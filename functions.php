@@ -14,9 +14,9 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
 	$mail->IsSMTP(); // enable SMTP
 	$mail->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
 	$mail->SMTPAuth = true;  // authentication enabled
-	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+	$mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
 	$mail->Host = 'smtp.gmail.com';
-	$mail->Port = 465; 
+	$mail->Port = 25; 
 	$mail->Username = GUSER;  
 	$mail->Password = GPWD;           
 	$mail->SetFrom($from, $from_name);

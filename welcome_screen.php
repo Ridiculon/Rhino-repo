@@ -128,16 +128,17 @@ if ($_REQUEST) {
 					$code = md5($row2['Uname']).$row2['RegisterDate'];
 					
 					//send the email with an email containing the activation link to the supplied email address
-					if (smtpmailer($email, 'Webmaster@rhinolaunch.com', 'The Rhino', 'RhinoLaunch Activation Email'
+					if (smtpmailer($email, 'Webmaster@rhinolaunch.com', 'The Rhino', 'RhinoLaunch Activation Email',
 						'Congratulations on registering your RhinoLaunch Account!\n
 						In order to finish registering, please follow this activation link. If the link doesn\'t work copy and paste it into your browser address bar.\n
-						http://rhinolaunch.com/activate.php?code='.urlencode($code)'
+						http://rhinolaunch.com/activate.php?code='.urlencode($code).'
 						Now that you are signed-up, be sure to check out our contest page. Submit a unique video to a contest you like and start making money today!\n
 						Be sure to tell your friends to join RhinoLaunch as well so they can vote for your submissions and increase your chances!\n
 						Thanks and best of luck!
 
 						- Team RhinoLaunch')) {
 						//put stuff here
+						echo "<p><h5>Thank you for creating a RhinoLaunch account.\nYou have been sent an email which contains the activation code for your account.</h5></p>";
 					}
 					if (!empty($error)) echo $error;
 
