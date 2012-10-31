@@ -71,7 +71,7 @@ if(!isset($_SESSION))
 	
 			<img src="images/Full_tab_header.png" style="position: absolute; width: 100%; height: 35px; top:20px; left: 0px;">
 			<div id="vidContainer" style="top: 55px; min-height: 250px">
-				<p>At the moment this feature doesn't work! If you are interested in submitting an idea for a contest or have question about how contests work, please talk to someone from the RhinoLaunch team!</p>
+				<p>At the moment this feature doesn't work! If you are interested in submitting an idea for a contest or have a question about how contests work, please contact the RhinoLaunch team at mbartle1@trinity.edu!</p>
 			</div>
 			
 		</div>

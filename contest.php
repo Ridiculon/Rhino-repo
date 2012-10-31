@@ -227,7 +227,7 @@ if(!isset($_SESSION))
 							echo '</div>';
 							echo '</div>';
 							echo '<div style="position: absolute; width: 100%; top: 130px; height: 150px">';
-							echo '<div style="width:100%; text-align: left"><h3>Description:</h3></div></br>';
+							echo '<div style="width:100%; text-align: left"><h3>Description:</h3></div>';
 							echo '<div style="width:100%; text-align: left">'.html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))).'</div></br>';
 							echo '</div>';
 							echo '<div style="position: absolute; width: 100%; top: 280px; height: 150px">';
