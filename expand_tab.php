@@ -72,10 +72,10 @@
 									echo htmlspecialchars(stripslashes($row['Name'])).'</a></strong>';
 									echo '</div>';
 									echo '<div style="position: absolute; top: 20px; left:15%; width:70%;">';
-									if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 250)
-										echo substr(htmlspecialchars(stripslashes($row['Summary'])), 0, 250).'...';
+									if(strlen(html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])))) > 250)
+										echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 250).'...';
 									else
-										echo htmlspecialchars(stripslashes($row['Summary']));
+										echo html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])));
 									echo '</div>';
 									echo '<div style="position: absolute; top: 15px; right: 0%; width: 15%">';
 									echo 'Due Date: </br>'.htmlspecialchars(stripslashes($row['EndDate']));;

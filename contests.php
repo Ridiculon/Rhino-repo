@@ -159,8 +159,8 @@ if(!isset($_SESSION))
 									echo htmlspecialchars(stripslashes($row['Name'])).'</a></strong>';
 									echo '</div>';
 									echo '<div style="position: absolute; text-align: left; top: 45px; left:160px; width:67%;">';
-									if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 400)
-											echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 400).'...';
+									if(strlen(htmlspecialchars(stripslashes($row['Summary']))) > 450)
+											echo substr(html_entity_decode(htmlspecialchars(stripslashes($row['Summary']))), 0, 450).'...';
 										else
 											echo html_entity_decode(htmlspecialchars(stripslashes($row['Summary'])));
 									echo '</div>';
