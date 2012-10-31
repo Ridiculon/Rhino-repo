@@ -152,7 +152,7 @@ if(!isset($_SESSION))
 									$row = mysql_fetch_array($result);
 
 									echo '<div style="height:100%; width:150px; position: absolute; left:0px; top: 15px;">';
-									echo '<img src="images/150px_thumbs/thumb3.png" class="no-border">';
+									echo '<img src="images/150px_thumbs/thumb7.png" class="no-border">';
 									echo '</div>';
 									echo '<div style="height:20px; position: absolute; left:160px; top: 10px; width: 69%;">';
 									echo '<strong>	RhinoLaunch Presents: <a href="./contest.php?contestid='.htmlspecialchars(stripslashes($row['Contest_id'])).'">';
