@@ -116,7 +116,7 @@ if(!isset($_SESSION))
 				</div>
 				
 				<div style="text-align: center; position: absolute; top: 75%; width: 100%">
-					<input type="checkbox" name="agree" value="Yes"/> I am over 18 years old and agree to the Terms & Conditions <br/>
+					<input type="checkbox" name="agree" value="Yes"/> I am over 18 years old and agree to the <a href="./terms.php" target="_blank">Terms & Conditions</a> <br/>
 				</div>
 				
 				<div style="text-align:center; position: absolute; top: 370px; width: 100%">
