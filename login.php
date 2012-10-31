@@ -58,7 +58,7 @@ include "./functions.php";
 					//document.getElementById("fb-div-reg").innerHTML = "";
 			
 					//document.getElementById("fb-div-reg").style.height = "0";
-					self.location = "http://rhinolaunch/register.php";
+					self.location = "http://rhinolaunch.com/register.php";
 				  } else {
 					// the user isn't logged in to Facebook.
 					//document.getElementById("fb-div-auth").innerHTML = "";
@@ -81,7 +81,7 @@ include "./functions.php";
 					var uid = response.authResponse.userID;
 					var accessToken = response.authResponse.accessToken;
 
-					self.location = "http://rhinolaunch/facebook_login.php?uid="+uid;
+					self.location = "http://rhinolaunch.com/facebook_login.php?uid="+uid;
 				} else {
 					// cancelled
 				}

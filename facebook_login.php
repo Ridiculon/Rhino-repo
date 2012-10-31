@@ -29,7 +29,7 @@
 		$next_url = 'http://rhinolaunch.com/profile.php?id='.$id;
 	}
 	else
-		$next_url = 'http://rhinolaunch/register.php';
+		$next_url = 'http://rhinolaunch.com/register.php';
 	
 	/*
 	if($num_results){
