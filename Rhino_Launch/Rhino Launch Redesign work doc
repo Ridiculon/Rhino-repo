@@ -1,0 +1,214 @@
+OLD TABLES
+
+Video Table
+- Video ID(primary)
+- Title
+- Link
+- Rating
+- Contest ID (foreign)
+- User ID (foreign)
+- Flag
+- Date Added
+- Description
+
+User Table
+- User ID (primary)
+- Username
+- Password
+- Name
+- Age
+- Picture
+- Email
+- Rhino Points (rename Rhino Score)
+- Video ID (not necessary)
+
+Contest Table
+- Contest ID (primary)
+- Video ID(foreign)
+- Summary
+- Name
+- Cash Prize
+- Rhino Point Prize
+- Icon
+- Start Date
+- End Date
+- Type
+- Biz Summary
+- Biz Picture
+=====================================================================
+NEW TABLES
+
+Video--
+Video ID (artificial primary)
+Title(natural primary)
+Link (natural primary)
+Rating
+C ID(foreign)
+U ID(foreign)
+Date Added (natural primary)
+Description
+
+Flags--
+Flag ID(primary)
+Type
+
+Flag--
+F ID (primary)
+V ID (foreign)
+Type
+Date Created
+Checked
+Removed
+Video Removed
+
+User Types--
+UType ID (primary)
+Type
+
+User Table--
+User ID (primary)
+User Type
+Username
+Password
+Name
+Age
+Email
+Rhino Score
+Date Joined
+
+Business User--
+B User ID (primary)
+User Type
+Username
+Password
+Company Name
+Contact Name
+Contact Email
+Contact Phone Number
+Company Description
+Link
+Date Joined
+/*
+might just use queries instead of storing these
+(Contest Count)
+(Total Cash Prize)
+(Avg Cash Prize)
+*/
+
+Admin User--
+A User ID
+User Type
+Username
+Password
+
+Contest Types--
+CType ID (primary)
+Type
+
+Contest Table--
+Contest ID (primary)
+BUser_ID
+Summary
+Name
+Cash Pool
+Rhino Point Prize
+Icon
+Start Date
+End Date
+Contest Type
+
+================================================================================
+SQL
+
+Create Database Rhino_Launch;
+
+Create Table Contest_Types(
+CType_ID INT NOT NULL IDENTITY(1,1),
+Type VARCHAR(50) NOT NULL,
+PRIMARY KEY(CType_ID));
+
+Create Table User_Types(
+UType_ID INT NOT NULL IDENTITY(1,1),
+Type VARCHAR (50) NOT NULL,
+PRIMARY KEY(UType_ID));
+
+Create Table Flags(
+F_ID INT NOT NULL IDENTITY(1,1),
+Type VARCHAR(50),
+PRIMARY KEY(F_ID));
+
+Create Table Admin_User(
+AU_ID INT NOT NULL IDENTITY(1,1),
+Type INT NOT NULL,
+Username VARCHAR(30) NOT NULL,
+Password VARCHAR(30) NOT NULL,
+PRIMARY KEY(AU_ID),
+FOREIGN KEY(Type) REFERENCES User_Types(UType_ID));
+
+Create Table Business_User(
+BU_ID INT NOT NULL IDENTITY(1,1),
+Type INT NOT NULL,
+Username VARCHAR(50) NOT NULL,
+Password VARCHAR(50) NOT NULL,
+Company_Name VARCHAR(50) NOT NULL,
+Contact_Name VARCHAR(50) NOT NULL,
+Contact_Email VARCHAR(50) NOT NULL,
+Contact_Phone VARCHAR(18) NOT NULL,
+Company_Description VARCHAR(500),
+Link VARCHAR(100),
+Date_Joined DATE NOT NULL,
+PRIMARY KEY(BU_ID),
+FOREIGN KEY(Type) REFERENCES User_Types(UType_ID));
+
+Create Table [User](
+U_ID INT NOT NULL IDENTITY(1,1),
+Type INT NOT NULL,
+Username VARCHAR(50) NOT NULL,
+Password VARCHAR(50) NOT NULL,
+Name VARCHAR (30) NOT NULL,
+Age INT NOT NULL,
+Email VARCHAR(50) NOT NULL,
+RPoints INT DEFAULT 0,
+Verified BOOLEAN DEFAULT FALSE,
+PRIMARY KEY(U_ID),
+FOREIGN KEY(Type) REFERENCES User_Types(UType_ID));
+
+Create Table Contest(
+C_ID INT NOT NULL IDENTITY(1,1),
+BUser_ID INT NOT NULL,
+Name VARCHAR(50) NOT NULL,
+Summary VARCHAR(450) NOT NULL,
+Cash_Pool INT DEFAULT 0,
+Rhino_Point_Prize INT DEFAULT 0,
+Icon VARCHAR(100),
+Start_Date DATE NOT NULL,
+End_Date DATE NOT NULL,
+C_Type INT NOT NULL,
+PRIMARY KEY(C_ID),
+FOREIGN KEY(C_Type) REFERENCES Contest_Types(CType_ID),
+FOREIGN KEY(BUser_ID) REFERENCES Business_User(BU_ID));
+
+Create Table Video(
+V_ID INT NOT NULL IDENTITY(1,1),
+Contest_ID INT NOT NULL,
+Creator INT NOT NULL,
+Title VARCHAR(50) NOT NULL,
+Link VARCHAR(100) NOT NULL,
+Rating INT DEFAULT 0,
+Date_Added DATE NOT NULL,
+Description VARCHAR(500),
+PRIMARY KEY(V_ID),
+FOREIGN KEY(Contest_ID) REFERENCES Contest(C_ID),
+FOREIGN KEY(Creator) REFERENCES User(U_ID));
+
+Create Table Flag(
+F_ID INT NOT NULL IDENTITY(1,1),
+Video_ID INT NOT NULL,
+Type INT NOT NULL,
+Date_Flagged TIMESTAMP NOT NULL,
+Admin_Checked BOOLEAN DEFAULT FLASE,
+Flag_Removed BOOLEAN DEFAULT FALSE,
+Video_Removed BOOLEAN DEFAULT FALSE,
+PRIMARY KEY(F_ID),
+FOREIGN KEY(Video_ID) REFERENCES Video(V_ID),
+FOREIGN KEY(Type) REFERENCES Flags(F_ID));
